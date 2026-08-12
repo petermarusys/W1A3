@@ -1,0 +1,8 @@
+<resources>
+    <color name="background">#101014</color>
+    <color name="accent">#F2A93B</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="button_focused">#F2A93B</color>
+    <color name="button_unfocused">#2A2A32</color>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Jazz Generator</string>
+    <string name="status_idle">Waiting for pressing button</string>
+    <string name="status_generating">Generate new music</string>
+    <string name="status_playing">Playing . . .</string>
+    <string name="status_paused">stop</string>
+    <string name="btn_play">Playing</string>
+    <string name="btn_pause">stop</string>
+    <string name="btn_next">next</string>
+</resources>

@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.jazztv'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.jazztv"
+        minSdk 21          // Android TV (Fire TV / Android TV OS) 최소 지원 버전
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    // .tflite 파일이 gradle에 의해 압축되지 않도록 설정 (필수)
+    androidResources {
+        noCompress += "tflite"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.leanback:leanback:1.0.0'   // Android TV UI 유틸(포커스 스타일 등)
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // TensorFlow Lite (LSTM 내부 연산 일부는 Flex delegate가 필요할 수 있어 select-tf-ops 포함)
+    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
+    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:2.14.0'
+
+    // 코루틴 (백그라운드에서 모델 추론)
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+}
