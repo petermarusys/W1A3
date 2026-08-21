@@ -1,4 +1,4 @@
-package com.example.jazztv
+package com.example.jazz
 
 import android.os.Bundle
 import android.widget.ImageButton

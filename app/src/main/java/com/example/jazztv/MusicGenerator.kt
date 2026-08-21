@@ -1,4 +1,4 @@
-package com.example.jazztv
+package com.example.jazz
 
 import android.content.Context
 import android.util.Log
@@ -79,12 +79,6 @@ class MusicGenerator(
 
 
     private fun sampleFromProbs(probs: FloatArray, temperature: Double): Int {
-        if (temperature <= 0.0) {
-            var bestIdx = 0
-            var bestVal = Float.NEGATIVE_INFINITY
-            for (i in probs.indices) if (probs[i] > bestVal) { bestVal = probs[i]; bestIdx = i }
-            return bestIdx
-        }
 
         val adjusted = DoubleArray(probs.size) { i ->
             Math.pow(probs[i].toDouble().coerceAtLeast(1e-9), 1.0 / temperature)

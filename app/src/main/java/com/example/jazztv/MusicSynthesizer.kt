@@ -1,4 +1,4 @@
-package com.example.jazztv
+package com.example.jazz
 
 import android.content.Context
 import android.media.AudioAttributes

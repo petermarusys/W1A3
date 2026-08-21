@@ -1,1 +1,4 @@
-**/assets/
+# Android Studio build outputs
+**/build/
+app/build/
+.gradle/**/assets/
